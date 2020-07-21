@@ -1,4 +1,4 @@
-package mod2AluraBayteBank;
+package mod2AluraByteBank;
 
 public class Cliente {
 

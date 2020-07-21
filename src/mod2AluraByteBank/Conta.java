@@ -1,14 +1,18 @@
-package mod2AluraBayteBank;
+package mod2AluraByteBank;
 
 import java.util.Objects;
 
-public class Conta {
+public abstract class Conta {
 
-    private double saldo;
+    protected double saldo;
     private int agencia;
     private int numeroTitular;
     private Cliente titular;
     private static int total;
+
+    public Conta(){
+
+    }
 
     public Conta(double saldo, int agencia, int numeroTitular, Cliente titular) {
         this.saldo = saldo;
@@ -19,7 +23,7 @@ public class Conta {
 
     public Conta(int agencia, int numeroTitular) {
         Conta.total++;
-        System.out.println("O total de contas é " +Conta.total);
+        //System.out.println("O total de contas é " +Conta.total);
     this.agencia = agencia;
     this.numeroTitular = numeroTitular;
     }
@@ -45,11 +49,11 @@ public class Conta {
         this.numeroTitular = numeroTitular;
     }
 
-    public Cliente gettitular() {
+    public Cliente getTitular() {
         return titular;
     }
 
-    public void settitular(Cliente titular) {
+    public void setTitular(Cliente titular) {
         this.titular = titular;
     }
 
@@ -70,25 +74,24 @@ public class Conta {
         return Objects.hash(numeroTitular);
     }
 
-    public void deposita(double valor){
-       this.saldo += valor;
-    }
+    public abstract void deposita(double valor);
 
     public boolean saca(double valor){
         if (this.saldo >= valor){
             this.saldo -= valor;
             return true;
-        } else {
-            return false;
         }
+            return false;
+
     }
 
     public  boolean transfere(double valor, Conta destino){
-        if (saldo >= valor){
-            this.saldo -= valor;
+        if (this.saca(valor)){
             destino.deposita(valor);
             return true;
-        }
+        } else {
+            System.out.println("Saldo é insuficiente");
             return false;
+        }
     }
 }

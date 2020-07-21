@@ -1,4 +1,4 @@
-package mod1Alura;
+package mod1AluraFundamentos;
 
 public class TestaLacos3 {
     public static void main(String[] args) {

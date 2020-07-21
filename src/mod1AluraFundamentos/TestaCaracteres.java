@@ -1,4 +1,4 @@
-package mod1Alura;
+package mod1AluraFundamentos;
 
 public class TestaCaracteres {
     public static void main(String[] args) {
