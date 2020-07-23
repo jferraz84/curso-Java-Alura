@@ -1,4 +1,4 @@
-package mod1AluraFundamentos;
+package mod1AluraFundamentos.testeCondicionais;
 
 public class TestaEscopo {
     public static void main(String[] args) {

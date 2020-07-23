@@ -1,4 +1,4 @@
-package mod1AluraFundamentos;
+package mod1AluraFundamentos.testeCaracterENumerais;
 
 public class TestaFatorial {
     public static void main(String[] args) {

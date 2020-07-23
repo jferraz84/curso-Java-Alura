@@ -1,4 +1,4 @@
-package mod1AluraFundamentos;
+package mod1AluraFundamentos.testeLacosrepeticao;
 
 public class TestaFor {
     public static void main(String[] args) {

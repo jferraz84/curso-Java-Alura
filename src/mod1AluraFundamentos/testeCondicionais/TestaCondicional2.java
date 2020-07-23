@@ -1,4 +1,4 @@
-package mod1AluraFundamentos;
+package mod1AluraFundamentos.testeCondicionais;
 
 public class TestaCondicional2 {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class TestaCondicional2 {
 
         if (idade >= 18 || qntPessoas >= 2) {
             System.out.println("Já é maior de idade, seja Bem Vindo");
-        }  else {
+        } else {
 
             System.out.println("Vc ainda é menor de idade e não está acompanhado, Não pode entrar");
         }

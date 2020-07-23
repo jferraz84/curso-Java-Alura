@@ -1,4 +1,4 @@
-package mod1AluraFundamentos;
+package mod1AluraFundamentos.testeLacosrepeticao;
 
 public class TestaLacos2 {
     public static void main(String[] args) {
