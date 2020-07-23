@@ -1,6 +1,17 @@
 package mod2AluraByteBank;
 
-import mod3AluraByteBankPOO.*;
+/**
+ *
+ * @autor Jorge
+ */
+
+
+import br.com.bytebank.mod2AluraByteBank.banco.modelo.Cliente;
+import br.com.bytebank.mod2AluraByteBank.banco.modelo.ContaCorrente;
+import br.com.bytebank.mod2AluraByteBank.banco.modelo.ContaPoupanca;
+import br.com.bytebank.mod2AluraByteBank.banco.utils.CalculadorImposto;
+import br.com.bytebank.mod2AluraByteBank.banco.utils.SeguroDeVida;
+import br.com.bytebank.mod4AluraExcecoes.utilsbyteBank.Conexao;
 
 import java.text.DecimalFormat;
 
@@ -103,8 +114,14 @@ public class PrincipalByteBank {
 
         // MOD3 = Reforçando conceitos de POLIMORFISMO
 
+        Cliente cli1 = new Cliente();
+        cli1.setNome("Pedro");
+        cli1.setCpf("666.555.444.33");
+        cli1.setProfissao("Pedreiro");
+
         ContaCorrente cc1 = new ContaCorrente(2421, 238503);
         cc1.deposita(350);
+
 
         SeguroDeVida segVid = new SeguroDeVida();
         CalculadorImposto calImp = new CalculadorImposto();
@@ -115,10 +132,41 @@ public class PrincipalByteBank {
         ContaPoupanca cp1 = new ContaPoupanca(2421, 238511);
         cp1.deposita(250);
 
+        //System.out.println(cli1);
+        System.out.println(cc1);
         System.out.println("Saldo da Conta Corrente cc1 = " + cc1.getSaldo());
+        System.out.println("---------------------------------------------");
+        //System.out.println(cli1);
+        System.out.println(cp1);
         System.out.println("Saldo da Conta Poupança cp1 = " + cp1.getSaldo());
         System.out.println("Imposto sobre Seguro de vida e Conta Corrente " + calImp.getTotalImposto());
 
+        // MOD4 = Reforçando conceitos de EXCEÇÕES - EXCEPTION
+
+        /*try {
+            cc1.saca(349);
+
+        } catch (SaldoInsuficienteException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Saque realizado saldo atualizado R$ " + saida.format(cc1.getSaldo()));
+
+        // EXEMPLO 1
+        Conexao con = null;
+        try {
+            con = new Conexao();
+            con.leDados();
+        } catch (IllegalStateException e) {
+            System.out.println(" Deu erro !!");
+        } finally {
+            con.close();
+        }
+
+        // EXEMPLO 2
+
+        try (Conexao conex = new Conexao()){
+            conex.leDados();
+        }*/
 
 
         /*cc1.transfere(50, cp1);
@@ -148,22 +196,6 @@ public class PrincipalByteBank {
         SistemaInterno si = new SistemaInterno();
         si.autentica(ger1);
         si.autentica(adm); */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
