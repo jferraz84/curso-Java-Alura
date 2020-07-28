@@ -12,7 +12,7 @@ import br.com.bytebank.mod4AluraExcecoes.utilsbyteBank.SaldoInsuficienteExceptio
 import javax.security.sasl.Sasl;
 import java.util.Objects;
 
-public abstract class Conta {
+public abstract class Conta extends Object implements  Comparable<Conta>{
 
     protected double saldo;
     private int agencia;
@@ -52,7 +52,6 @@ public abstract class Conta {
         return saldo;
     }
 
-
     public int getAgencia() {
         return agencia;
     }
@@ -81,18 +80,6 @@ public abstract class Conta {
         return Conta.total;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Conta conta = (Conta) o;
-        return numeroTitular == conta.numeroTitular;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(numeroTitular);
-    }
 
     public abstract void deposita(double valor);
 
@@ -116,8 +103,24 @@ public abstract class Conta {
     }
 
     @Override
+    public boolean equals(Object ref){
+
+        Conta outra = (Conta) ref;
+        if (this.agencia != outra.agencia || this.numeroTitular != outra.numeroTitular ){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int compareTo(Conta outra) {
+        return Double.compare(this.saldo, outra.saldo);
+    }
+
+    @Override
     public String toString() {
         return "agencia = " + agencia +
-                ", numeroTitular = "  + numeroTitular;
+                ", numeroTitular = "  + numeroTitular +
+                ", Saldo = "  + saldo;
     }
 }
