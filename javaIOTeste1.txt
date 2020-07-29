@@ -1,0 +1,2 @@
+O armazenamento de dados é feito em serviços que poderão ser acedidos de qualquer lugar do mundo, 
+a qualquer hora, não havendo necessidade de instalação de programas ou de armazenar dados.

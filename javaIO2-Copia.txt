@@ -1,0 +1,6 @@
+Computação em nuvem (em inglês, cloud computing), é a disponibilidade sob demanda de recursos 
+do sistema de computador , especialmente armazenamento de dados e capacidade de computação, 
+sem o gerenciamento ativo direto do utilizador. O termo geralmente é usado para descrever 
+centros de dados disponíveis para muitos utilizadores pela Internet. Nuvens em grande escala, 
+predominantes hoje em dia, geralmente têm funções distribuídas em vários locais dos servidores 
+centrais. Se a conexão com o utilizador for relativamente próxima, pode ser designado um servidor de borda.
